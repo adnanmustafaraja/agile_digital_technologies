@@ -1,0 +1,93 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply text-gray-800 antialiased;
+  }
+
+  ::selection {
+    @apply bg-brand-cyan text-white;
+  }
+
+  ::-webkit-scrollbar {
+    width: 6px;
+  }
+
+  ::-webkit-scrollbar-track {
+    @apply bg-gray-100;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    @apply bg-navy rounded-full;
+  }
+}
+
+@layer components {
+  /* Dot-grid background used in hero and dark sections */
+  .dot-grid {
+    background-image: radial-gradient(circle, rgba(41, 171, 226, 0.18) 1px, transparent 1px);
+    background-size: 28px 28px;
+  }
+
+  /* Cyan accent word inside a navy heading */
+  .heading-accent {
+    @apply text-brand-cyan;
+  }
+
+  /* Standard section padding */
+  .section-pad {
+    @apply py-20 px-4 sm:px-6 lg:px-8;
+  }
+
+  /* Max-width container */
+  .container-xl {
+    @apply max-w-7xl mx-auto;
+  }
+
+  /* Section label (small caps above heading) */
+  .section-label {
+    @apply text-brand-cyan text-sm font-semibold tracking-widest uppercase mb-3;
+  }
+
+  /* Primary CTA button */
+  .btn-primary {
+    @apply bg-brand-cyan hover:bg-brand-cyan-dark text-white font-semibold px-7 py-3.5 rounded-lg transition-all duration-200 inline-flex items-center gap-2 shadow-lg shadow-brand-cyan/20;
+  }
+
+  /* Secondary / ghost button */
+  .btn-secondary {
+    @apply border-2 border-white/40 hover:border-white text-white font-semibold px-7 py-3.5 rounded-lg transition-all duration-200 inline-flex items-center gap-2 hover:bg-white/10;
+  }
+
+  /* Card base */
+  .card {
+    @apply bg-white rounded-2xl border border-gray-100 shadow-sm hover:shadow-md transition-all duration-300;
+  }
+
+  /* Card hover lift + cyan accent */
+  .card-hover {
+    @apply hover:-translate-y-1 hover:border-brand-cyan/30;
+  }
+}
+
+/* Staggered fade-up animation for section children */
+@keyframes fadeUpIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-up {
+  animation: fadeUpIn 0.5s ease-out forwards;
+}
