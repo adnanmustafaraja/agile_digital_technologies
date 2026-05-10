@@ -1,5 +1,24 @@
 import { company } from "@/data/company";
 
+// Maps tech names to their Simple Icons CDN slugs (cdn.simpleicons.org/{slug})
+const techLogoSlugs: Record<string, string> = {
+  "Angular":        "angular",
+  "React JS":       "react",
+  "Next.js":        "nextdotjs",
+  "Node.js":        "nodedotjs",
+  "Express JS":     "express",
+  "Laravel":        "laravel",
+  "MySQL":          "mysql",
+  "MongoDB":        "mongodb",
+  "Firebase":       "firebase",
+  "Android":        "android",
+  "React Native":   "react",
+  "Figma":          "figma",
+  "Adobe XD":       "adobexd",
+  "WordPress":      "wordpress",
+  "Shopify":        "shopify",
+};
+
 export default function WhyUs() {
   return (
     <section className="bg-navy-dark section-pad relative overflow-hidden">
@@ -74,20 +93,46 @@ export default function WhyUs() {
 
         {/* Tech Stack */}
         <div className="border-t border-white/10 pt-16 mt-16">
-          <p className="section-label text-center mb-10">Our Technology Stack</p>
-          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-6 gap-6">
+          <p className="section-label text-center mb-4">Our Technology Stack</p>
+          <h2 className="text-3xl sm:text-4xl font-bold text-white text-center mb-12">
+            Tools We <span className="heading-accent">Build With</span>
+          </h2>
+          <div className="space-y-10">
             {Object.entries(company.techStack).map(([category, techs]) => (
               <div key={category}>
-                <p className="text-brand-cyan text-xs font-semibold uppercase tracking-wider mb-3">
+                <p className="text-white/40 text-xs font-semibold uppercase tracking-widest mb-5 border-b border-white/10 pb-3">
                   {category}
                 </p>
-                <ul className="space-y-1.5">
-                  {techs.map((tech) => (
-                    <li key={tech} className="text-white/60 text-sm">
-                      {tech}
-                    </li>
-                  ))}
-                </ul>
+                <div className="flex flex-wrap gap-4">
+                  {techs.map((tech) => {
+                    const slug = techLogoSlugs[tech];
+                    return (
+                      <div
+                        key={tech}
+                        className="flex flex-col items-center gap-2 group cursor-default"
+                      >
+                        <div className="w-14 h-14 rounded-xl bg-white/5 border border-white/10 group-hover:border-brand-cyan/40 group-hover:bg-white/10 transition-all duration-200 flex items-center justify-center p-3">
+                          {slug ? (
+                            <img
+                              src={`https://cdn.simpleicons.org/${slug}/ffffff`}
+                              alt={tech}
+                              width={32}
+                              height={32}
+                              className="w-8 h-8 object-contain"
+                            />
+                          ) : (
+                            <span className="text-white/60 text-xs text-center leading-tight font-medium">
+                              {tech}
+                            </span>
+                          )}
+                        </div>
+                        <span className="text-white/50 text-xs group-hover:text-white/80 transition-colors">
+                          {tech}
+                        </span>
+                      </div>
+                    );
+                  })}
+                </div>
               </div>
             ))}
           </div>
