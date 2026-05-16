@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from "react";
 import Link from "next/link";
+import Image from "next/image";
 import { Menu, X } from "lucide-react";
 import { company } from "@/data/company";
 
@@ -33,25 +34,20 @@ export default function Navbar() {
       <div className="container-xl">
         <nav className="flex items-center justify-between h-18 py-4">
           {/* Logo */}
-          <Link href="/" className="flex items-center gap-2 group">
-            {/* Logo mark: two overlapping triangles using CSS */}
-            <div className="flex items-end gap-0.5">
-              <div className="w-4 h-5 bg-navy rounded-sm" />
-              <div className="w-4 h-3 bg-brand-cyan rounded-sm mb-0.5" />
-            </div>
-            <div className="flex flex-col leading-none">
-              <span
-                className={`font-bold text-base tracking-tight transition-colors ${
-                  scrolled ? "text-navy" : "text-white"
-                }`}
-              >
+          <Link href="/" className="flex items-center gap-0 group">
+            <Image
+              src="/logo.png"
+              alt={company.name}
+              width={160}
+              height={60}
+              className="h-12 w-auto object-contain"
+              priority
+            />
+            <div className="flex flex-col leading-none gap-0">
+              <span className="font-bold text-xl tracking-tight text-navy">
                 Agile Digital
               </span>
-              <span
-                className={`text-xs font-medium transition-colors ${
-                  scrolled ? "text-brand-cyan" : "text-brand-cyan"
-                }`}
-              >
+              <span className="text-sm font-medium text-brand-cyan -mt-1">
                 Technologies
               </span>
             </div>
@@ -64,7 +60,7 @@ export default function Navbar() {
                 <Link
                   href={link.href}
                   className={`text-sm font-medium transition-colors hover:text-brand-cyan ${
-                    scrolled ? "text-gray-700" : "text-white/90"
+                    scrolled ? "text-gray-700" : "text-gray-700"
                   }`}
                 >
                   {link.label}
@@ -83,7 +79,7 @@ export default function Navbar() {
           {/* Mobile hamburger */}
           <button
             className={`md:hidden p-2 rounded-lg transition-colors ${
-              scrolled ? "text-navy hover:bg-gray-100" : "text-white hover:bg-white/10"
+              scrolled ? "text-navy hover:bg-gray-100" : "text-navy hover:bg-gray-100"
             }`}
             onClick={() => setMenuOpen(!menuOpen)}
             aria-label="Toggle menu"

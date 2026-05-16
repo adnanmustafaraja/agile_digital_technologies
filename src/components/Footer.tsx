@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import { Mail, Phone, MapPin, Instagram, Facebook, Linkedin, Twitter } from "lucide-react";
 import { company } from "@/data/company";
 import { services } from "@/data/services";
@@ -7,21 +8,26 @@ export default function Footer() {
   const year = new Date().getFullYear();
 
   return (
-    <footer className="bg-navy-dark text-white/70">
+    <footer className="bg-slate-100 text-gray-600 border-t border-slate-200">
       <div className="container-xl px-4 sm:px-6 lg:px-8 pt-16 pb-8">
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10 mb-12">
           {/* Brand */}
           <div className="lg:col-span-1">
-            <Link href="/" className="flex items-center gap-2 mb-4">
-              <div className="flex items-end gap-0.5">
-                <div className="w-4 h-5 bg-white rounded-sm" />
-                <div className="w-4 h-3 bg-brand-cyan rounded-sm mb-0.5" />
-              </div>
+            <Link href="/" className="flex items-center gap-0 mb-4">
+              <Image
+                src="/logo.png"
+                alt={company.name}
+                width={160}
+                height={60}
+                className="h-12 w-auto object-contain"
+              />
               <div className="flex flex-col leading-none">
-                <span className="font-bold text-base text-white tracking-tight">
+                <span className="font-bold text-xl tracking-tight text-navy">
                   Agile Digital
                 </span>
-                <span className="text-xs font-medium text-brand-cyan">Technologies</span>
+                <span className="text-sm font-medium text-brand-cyan -mt-1">
+                  Technologies
+                </span>
               </div>
             </Link>
             <p className="text-sm leading-relaxed mb-6">
@@ -42,7 +48,7 @@ export default function Footer() {
                   target="_blank"
                   rel="noopener noreferrer"
                   aria-label={label}
-                  className="w-9 h-9 rounded-lg border border-white/15 flex items-center justify-center hover:border-brand-cyan hover:text-brand-cyan transition-colors"
+                  className="w-9 h-9 rounded-lg border border-gray-300 flex items-center justify-center hover:border-brand-cyan hover:text-brand-cyan transition-colors"
                 >
                   <Icon size={15} />
                 </a>
@@ -52,7 +58,7 @@ export default function Footer() {
 
           {/* Services */}
           <div>
-            <h4 className="text-white font-semibold text-sm mb-5">Services</h4>
+            <h4 className="text-navy font-semibold text-sm mb-5">Services</h4>
             <ul className="space-y-2.5">
               {services.map((s) => (
                 <li key={s.slug}>
@@ -69,7 +75,7 @@ export default function Footer() {
 
           {/* Company */}
           <div>
-            <h4 className="text-white font-semibold text-sm mb-5">Company</h4>
+            <h4 className="text-navy font-semibold text-sm mb-5">Company</h4>
             <ul className="space-y-2.5 text-sm">
               {[
                 { label: "Home", href: "/" },
@@ -92,7 +98,7 @@ export default function Footer() {
 
           {/* Contact */}
           <div>
-            <h4 className="text-white font-semibold text-sm mb-5">Contact Us</h4>
+            <h4 className="text-navy font-semibold text-sm mb-5">Contact Us</h4>
             <ul className="space-y-4 text-sm">
               <li>
                 <a
@@ -121,12 +127,11 @@ export default function Footer() {
         </div>
 
         {/* Bottom bar */}
-        <div className="border-t border-white/10 pt-8 flex flex-col sm:flex-row items-center justify-between gap-4">
-          <p className="text-xs text-white/40">
+        <div className="border-t border-slate-200 pt-8 flex flex-col sm:flex-row items-center justify-between gap-4">
+          <p className="text-xs text-gray-400">
             © {year} {company.fullName}. All rights reserved.
           </p>
-          <div className="flex gap-6 text-xs text-white/40">
-            {/* TODO: add real privacy policy and terms pages */}
+          <div className="flex gap-6 text-xs text-gray-400">
             <Link href="#" className="hover:text-brand-cyan transition-colors">
               Privacy Policy
             </Link>

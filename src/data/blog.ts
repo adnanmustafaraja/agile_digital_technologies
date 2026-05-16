@@ -15,6 +15,7 @@ export interface BlogPost {
   author: string;
   readTime: string;
   color: string;     // Tailwind gradient for card visual
+  photo: string;     // Unsplash photo URL for card header
   metaTitle: string;
   metaDescription: string;
 }
@@ -40,6 +41,7 @@ export const blogPosts: BlogPost[] = [
     author: "Ammar Ahmed",
     readTime: "7 min read",
     color: "from-blue-500 to-indigo-600",
+    photo: "https://images.unsplash.com/photo-1521737604893-d14cc237f11d?w=800&q=80",
     metaTitle: "How to Hire a Software Development Company in the USA | ADT Blog",
     metaDescription:
       "A practical guide to evaluating and partnering with an offshore software development company that delivers real results for US businesses.",
@@ -64,6 +66,7 @@ export const blogPosts: BlogPost[] = [
     author: "Danial Siddique",
     readTime: "9 min read",
     color: "from-emerald-500 to-teal-600",
+    photo: "https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?w=800&q=80",
     metaTitle: "Cost of Mobile App Development in 2026 | ADT Blog",
     metaDescription:
       "A detailed breakdown of mobile app development costs in 2026 — by platform, complexity, and team model — including offshore cost savings.",
@@ -88,6 +91,7 @@ export const blogPosts: BlogPost[] = [
     author: "Adnan",
     readTime: "6 min read",
     color: "from-purple-500 to-pink-600",
+    photo: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&q=80",
     metaTitle: "Business Intelligence vs Traditional Reporting | ADT Blog",
     metaDescription:
       "Learn the difference between traditional reporting and business intelligence, and how BI can transform how your company makes decisions.",
@@ -112,6 +116,7 @@ export const blogPosts: BlogPost[] = [
     author: "Ammar Ahmed",
     readTime: "8 min read",
     color: "from-green-600 to-emerald-800",
+    photo: "https://images.unsplash.com/photo-1522202176988-66273c2fd55f?w=800&q=80",
     metaTitle: "Why US Companies Are Outsourcing to Pakistan in 2026 | ADT Blog",
     metaDescription:
       "Pakistan is one of the world's top IT outsourcing destinations. Learn why US companies are choosing Pakistani development partners in 2026.",
@@ -136,6 +141,7 @@ export const blogPosts: BlogPost[] = [
     author: "Adnan",
     readTime: "10 min read",
     color: "from-orange-500 to-red-600",
+    photo: "https://images.unsplash.com/photo-1677442135703-1787eea5ce01?w=800&q=80",
     metaTitle: "Generative AI in Enterprise Software in 2026 | ADT Blog",
     metaDescription:
       "Explore where generative AI is genuinely adding value in enterprise software — real use cases, integration approaches, and limitations to know.",
@@ -158,6 +164,7 @@ export const blogPosts: BlogPost[] = [
     author: "Ammar Ahmed",
     readTime: "8 min read",
     color: "from-sky-500 to-blue-700",
+    photo: "https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=800&q=80",
     metaTitle: "How Dedicated Development Teams Work | ADT Blog",
     metaDescription:
       "The complete guide to dedicated development teams — how the model works, what it costs, and how to manage remote engineers effectively.",

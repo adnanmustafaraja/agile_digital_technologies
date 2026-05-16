@@ -11,6 +11,7 @@ export interface Project {
   client: string;
   tech: string[];
   color: string;           // Tailwind gradient classes for the card visual
+  oklchHue: number;        // Hue value for OKLCH card color (L=0.5 C=0.12)
   shortDescription: string;
   longDescription: string;
   challenge: string;
@@ -29,6 +30,7 @@ export const projects: Project[] = [
     client: "ATHATH",
     tech: ["Android", "Laravel", "MySQL"],
     color: "from-emerald-600 to-teal-800",
+    oklchHue: 155,
     shortDescription:
       "A furniture marketplace mobile app for the Middle East enabling seamless product browsing, dimension configuration, and ordering.",
     longDescription:
@@ -55,6 +57,7 @@ export const projects: Project[] = [
     client: "Sports Ballistics",
     tech: ["React Native", "Laravel", "MySQL"],
     color: "from-red-600 to-purple-800",
+    oklchHue: 32,
     shortDescription:
       "A multi-sport management platform with dedicated apps for Basketball, Volleyball, and Toddler training programs.",
     longDescription:
@@ -81,6 +84,7 @@ export const projects: Project[] = [
     client: "Internal Product",
     tech: ["React JS", "Node.js", "Express JS", "MongoDB"],
     color: "from-blue-500 to-cyan-700",
+    oklchHue: 60,
     shortDescription:
       "A full-featured ERP system with financial dashboards, order management, invoicing, and multi-role user management.",
     longDescription:
@@ -107,6 +111,7 @@ export const projects: Project[] = [
     client: "Internal Product",
     tech: ["Laravel", "MySQL", "HTML", "CSS"],
     color: "from-slate-600 to-navy-dark",
+    oklchHue: 310,
     shortDescription:
       "A CRM platform with deal pipeline management, contact tracking, agent performance metrics, and revenue analytics.",
     longDescription:

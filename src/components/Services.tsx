@@ -37,10 +37,10 @@ export default function Services() {
               <Link
                 key={service.slug}
                 href={`/services/${service.slug}`}
-                className="card card-hover p-6 group flex flex-col"
+                className="p-6 group flex flex-col rounded-2xl bg-brand-ice border border-brand-cyan/15 hover:border-brand-cyan/40 transition-all duration-200 shadow-md shadow-brand-cyan/10 hover:shadow-lg hover:shadow-brand-cyan/20 hover:-translate-y-1"
               >
                 {/* Icon */}
-                <div className="w-12 h-12 rounded-xl bg-brand-ice flex items-center justify-center mb-5 group-hover:bg-brand-cyan/10 transition-colors">
+                <div className="w-12 h-12 rounded-xl bg-brand-cyan/10 flex items-center justify-center mb-5 group-hover:bg-brand-cyan/20 transition-colors">
                   <Icon size={22} className="text-brand-cyan" />
                 </div>
 

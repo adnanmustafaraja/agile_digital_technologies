@@ -42,7 +42,7 @@
 
   /* Standard section padding */
   .section-pad {
-    @apply py-20 px-4 sm:px-6 lg:px-8;
+    @apply pt-12 pb-20 px-4 sm:px-6 lg:px-8;
   }
 
   /* Max-width container */
@@ -62,7 +62,7 @@
 
   /* Secondary / ghost button */
   .btn-secondary {
-    @apply border-2 border-white/40 hover:border-white text-white font-semibold px-7 py-3.5 rounded-lg transition-all duration-200 inline-flex items-center gap-2 hover:bg-white/10;
+    @apply border-2 border-navy/30 hover:border-navy text-navy font-semibold px-7 py-3.5 rounded-lg transition-all duration-200 inline-flex items-center gap-2 hover:bg-navy/5;
   }
 
   /* Card base */

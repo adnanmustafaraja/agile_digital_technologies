@@ -15,6 +15,10 @@ export const metadata: Metadata = {
   title: company.meta.title,
   description: company.meta.description,
   keywords: company.meta.keywords,
+  icons: {
+    icon: "/favicon.png",
+    apple: "/favicon.png",
+  },
   openGraph: {
     title: company.meta.title,
     description: company.meta.description,

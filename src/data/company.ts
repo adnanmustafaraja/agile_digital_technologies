@@ -65,18 +65,21 @@ export const company = {
     {
       number: "01",
       title: "Service",
+      tagline: "We treat every client like our only client.",
       description:
         "Customer first attitude. No hold-ups, no nasty surprises, satisfaction guaranteed.",
     },
     {
       number: "02",
       title: "Integrity",
+      tagline: "Our word is our bond — no exceptions.",
       description:
         "Business relationships are based on true Trust. Integrity is our cultural priority and commitment is our preference.",
     },
     {
       number: "03",
       title: "Team Work",
+      tagline: "Great software is built by great teams.",
       description:
         "A team of creatively inspired, focused, flexible and collaborative individuals full of enthusiasm towards finding digital pathways to achieve your goals.",
     },
@@ -108,12 +111,26 @@ export const company = {
 
   // ---------- TECHNOLOGY STACK ----------
   techStack: {
-    Frontend: ["Angular", "React JS", "Next.js"],
-    Backend: ["Node.js", "Express JS", "Laravel"],
-    Database: ["MySQL", "MongoDB", "Firebase"],
-    Mobile: ["Android", "React Native"],
-    Design: ["Figma", "Adobe XD"],
-    "CMS / E-Commerce": ["WordPress", "Shopify"],
+    Frontend: [
+      "React JS", "Next.js", "Angular", "Vue.js", "Svelte", "Nuxt",
+      "Gatsby", "Astro", "Remix", "TypeScript", "JavaScript", "HTML5",
+      "Tailwind CSS", "Bootstrap", "Sass", "Vite",
+    ],
+    Backend: [
+      "Node.js", "Express JS", "Python", "Django", "FastAPI", "Flask",
+      "Laravel", "PHP", "Ruby on Rails", "Spring Boot", "GraphQL",
+    ],
+    Database: [
+      "MySQL", "PostgreSQL", "MongoDB", "Firebase", "Redis",
+      "SQLite", "Supabase", "Elasticsearch", "Prisma",
+    ],
+    Mobile: ["React Native", "Flutter", "Android", "iOS", "Kotlin", "Swift"],
+    Design: ["Figma", "Sketch", "Framer", "Webflow", "Canva", "Adobe XD"],
+    "CMS / E-Commerce": [
+      "WordPress", "Shopify", "WooCommerce", "Strapi",
+      "Ghost", "Contentful", "Sanity", "Drupal", "PrestaShop",
+    ],
+    "Cloud / DevOps": ["Docker", "Kubernetes", "Vercel", "Netlify", "Google Cloud"],
   },
 
   // ---------- CLIENTS ----------
