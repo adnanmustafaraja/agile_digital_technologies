@@ -1,13 +1,19 @@
 import Link from "next/link";
 import Image from "next/image";
-import { ArrowRight, Phone } from "lucide-react";
+import { ArrowRight } from "lucide-react";
 import { company } from "@/data/company";
+
+const spacing = 32;
+const rowFade = Array.from({ length: 30 }, (_, i) => {
+  const h = Math.sin(i * 127.1 + 311.7) * 43758.5453123;
+  return 3.0 + (h - Math.floor(h)) * 1.2;
+});
 
 export default function Hero() {
   return (
     <section className="relative min-h-screen flex flex-col bg-gray-50 overflow-hidden">
       {/* Dot-grid texture */}
-      <div className="absolute inset-0 dot-grid opacity-30" />
+      <div className="absolute top-[4.5rem] inset-x-0 bottom-0 dot-grid opacity-30" />
 
       {/* Hero photo — right side, fades left into content */}
       <div className="absolute right-0 top-0 w-[60%] h-full pointer-events-none select-none">
@@ -25,8 +31,34 @@ export default function Hero() {
       {/* Subtle cyan glow */}
       <div className="absolute -top-32 -right-32 w-96 h-96 bg-brand-cyan/10 rounded-full blur-3xl" />
 
+      {/* Dot matrix / halftone — left side */}
+      <div className="absolute left-0 top-[4.4rem] bottom-0 w-1/2 pointer-events-none select-none overflow-hidden">
+        <svg
+          className="w-full h-full"
+          viewBox="0 0 640 980"
+          xmlns="http://www.w3.org/2000/svg"
+          preserveAspectRatio="xMinYMin slice"
+        >
+          {Array.from({ length: 30 }, (_, row) =>
+            Array.from({ length: 22 }, (_, col) => {
+              const offsetX = row % 2 === 1 ? spacing / 2 : 0;
+              const x = 16 + offsetX + col * spacing;
+              const y = 16 + row * spacing;
+              if (x > 650) return null;
+              const xNorm = x / 640;
+              const fade = rowFade[row] ?? 1;
+              const r = Math.max(0.6, 4.8 * (1 - xNorm * 0.9 * fade));
+              const opacity = Math.max(0, 0.42 * (1 - xNorm * 0.85 * fade));
+              if (opacity < 0.01) return null;
+              return <circle key={`${row}-${col}`} cx={x} cy={y} r={r} fill="#22d3ee" opacity={opacity} />;
+            })
+          )}
+        </svg>
+      </div>
+
       {/* Main content — vertically centered in remaining space */}
-      <div className="relative flex-1 flex items-center container-xl section-pad pt-40">
+      <div className="relative flex-1 flex items-center container-xl pt-40 pb-20">
+
         <div className="max-w-3xl">
           {/* Badge */}
           <div className="inline-flex items-center gap-2 bg-navy/5 border border-navy/15 rounded-full px-4 py-1.5 mb-8">
@@ -53,26 +85,11 @@ export default function Hero() {
               {company.hero.ctaPrimary.label}
               <ArrowRight size={18} />
             </Link>
-            <Link href={company.hero.ctaSecondary.href} className="btn-secondary">
+            {/* <Link href={company.hero.ctaSecondary.href} className="btn-secondary">
               {company.hero.ctaSecondary.label}
-            </Link>
+            </Link> */}
           </div>
 
-          {/* Quick contact */}
-          <div className="flex items-center gap-3 text-gray-500">
-            <div className="flex items-center justify-center w-9 h-9 rounded-full border border-gray-200 bg-white">
-              <Phone size={15} className="text-brand-cyan" />
-            </div>
-            <span className="text-sm">
-              Call us:{" "}
-              <a
-                href={`tel:${company.phone}`}
-                className="text-gray-800 hover:text-brand-cyan transition-colors font-medium"
-              >
-                {company.phone}
-              </a>
-            </span>
-          </div>
         </div>
       </div>
 

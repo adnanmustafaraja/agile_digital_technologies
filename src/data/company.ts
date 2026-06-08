@@ -36,7 +36,7 @@ export const company = {
     heading: "Conquering Digital",
     headingAccent: "Pathway Together",
     subheading:
-      "We help businesses in California, New York, and Texas build custom software, mobile apps, and AI solutions — powered by Pakistan's top engineering talent at a fraction of US cost.",
+      "We help businesses in US build custom software, mobile apps, and AI solutions — powered by Pakistan's top engineering talent at a fraction of US cost.",
     ctaPrimary: { label: "Get a Free Consultation", href: "#contact" },
     ctaSecondary: { label: "View Our Work", href: "#projects" },
   },
@@ -112,25 +112,21 @@ export const company = {
   // ---------- TECHNOLOGY STACK ----------
   techStack: {
     Frontend: [
-      "React JS", "Next.js", "Angular", "Vue.js", "Svelte", "Nuxt",
-      "Gatsby", "Astro", "Remix", "TypeScript", "JavaScript", "HTML5",
-      "Tailwind CSS", "Bootstrap", "Sass", "Vite",
+      "React JS", "Next.js", "Angular", "Vue.js",
+      "TypeScript", "JavaScript", "HTML5", "Bootstrap",
     ],
     Backend: [
-      "Node.js", "Express JS", "Python", "Django", "FastAPI", "Flask",
-      "Laravel", "PHP", "Ruby on Rails", "Spring Boot", "GraphQL",
+      "Node.js", "Express JS", "Python", "Flask",
+      "Laravel", "PHP",
     ],
     Database: [
-      "MySQL", "PostgreSQL", "MongoDB", "Firebase", "Redis",
-      "SQLite", "Supabase", "Elasticsearch", "Prisma",
+      "MySQL", "PostgreSQL", "MongoDB", "Firebase", "SQLite",
     ],
-    Mobile: ["React Native", "Flutter", "Android", "iOS", "Kotlin", "Swift"],
-    Design: ["Figma", "Sketch", "Framer", "Webflow", "Canva", "Adobe XD"],
+    Mobile: ["React Native", "Flutter", "Android", "iOS"],
+    Design: ["Figma", "Canva", "Adobe XD"],
     "CMS / E-Commerce": [
-      "WordPress", "Shopify", "WooCommerce", "Strapi",
-      "Ghost", "Contentful", "Sanity", "Drupal", "PrestaShop",
+      "WordPress", "Shopify", "WooCommerce",
     ],
-    "Cloud / DevOps": ["Docker", "Kubernetes", "Vercel", "Netlify", "Google Cloud"],
   },
 
   // ---------- CLIENTS ----------

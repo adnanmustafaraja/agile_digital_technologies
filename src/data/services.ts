@@ -49,14 +49,14 @@ export const services: Service[] = [
     longDescription:
       "We build high-performance mobile applications that deliver exceptional user experiences across iOS and Android. Whether you need a native app or a cross-platform solution using React Native, we have the expertise to bring your mobile vision to life — on time and within budget.",
     features: [
-      "Native iOS (Swift) and Android (Kotlin) development",
+      "Native iOS and Android development",
       "Cross-platform apps with React Native",
       "Mobile-first UI/UX design and prototyping",
       "App Store and Google Play submission and compliance",
       "Push notifications, offline mode, and device integrations",
       "Post-launch monitoring, support, and updates",
     ],
-    technologies: ["React Native", "Swift", "Kotlin", "Firebase", "Laravel", "Node.js"],
+    technologies: ["React Native", "Flutter", "Firebase", "Laravel", "Node.js"],
     metaTitle: "Mobile App Development Company USA | Agile Digital Technologies",
     metaDescription:
       "Custom iOS, Android & React Native app development for US businesses. From concept to App Store. Get a free mobile app consultation.",
@@ -78,7 +78,7 @@ export const services: Service[] = [
       "E-commerce development (Shopify, WooCommerce, custom)",
       "Performance optimization, hosting, and deployment",
     ],
-    technologies: ["Next.js", "React", "WordPress", "Shopify", "Tailwind CSS", "Vercel"],
+    technologies: ["Next.js", "React", "WordPress", "Shopify", "Vercel"],
     metaTitle: "Website Design & Development Company USA | Agile Digital Technologies",
     metaDescription:
       "Custom, SEO-optimized website design and development for US businesses. Fast, responsive, and built to convert. Get a free website consultation.",
